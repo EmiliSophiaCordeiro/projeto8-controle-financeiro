@@ -1,10 +1,10 @@
 let balance = 'Digite a quantidade inicial de dinheiro disponível:'
 
-  console.log("\nSeu saldo atual é R$" + balance.toFixed(2));
-  console.log("Opções:");
-  console.log("1. Adicionar dinheiro");
-  console.log("2. Remover dinheiro");
-  console.log("3. Sair");
+  console.log(`\nSeu saldo atual é R$" + balance + '00'`);
+  console.log(`Opções:`);
+  console.log(`1. Adicionar dinheiro`);
+  console.log(`2. Remover dinheiro`);
+  console.log(`3. Sair`);
 
   const option = 'Escolha uma opção (1, 2 ou 3):'
 
@@ -18,7 +18,7 @@ let balance = 'Digite a quantidade inicial de dinheiro disponível:'
       balance -= valueRemoves;
       break;
     case 3:
-      console.log("Programa encerrado. Seu saldo final é R$" + balance.toFixed(2));
+      console.log("Programa encerrado. Seu saldo final é R$" + balance + '00'`);
       return; 
     default:
       console.log("Opção inválida. Tente novamente.");
