@@ -24,7 +24,7 @@ while (true) {
             break;
         case 3:
             console.log("Saindo...");
-            process.exit(); // Para encerrar o programa no Node.js
+            process.exit();
             break;
         default:
             console.log("Opção inválida.");
