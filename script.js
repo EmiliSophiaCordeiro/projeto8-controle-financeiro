@@ -1,33 +1,42 @@
 let dinheiro = parseFloat(prompt("Digite a quantidade inicial de dinheiro:"));
 
 while (true) {
-    console.log(`Você tem R$ ${dinheiro}`);
-    console.log("Escolha uma opção:");
-    console.log("1. Adicionar dinheiro");
-    console.log("2. Remover dinheiro");
-    console.log("3. Sair");
+    // Exibe o saldo atual
+    alert(`Você tem R$ ${dinheiro.toFixed(2)}`);
+    let menu = `
+Escolha uma opção:
+1. Adicionar dinheiro
+2. Remover dinheiro
+3. Sair`;
 
-    const opcao = parseInt(prompt("Digite o número da opção:"));
+    const opcao = parseInt(prompt(menu));
 
     switch (opcao) {
         case 1:
-            const adicionar = parseFloat(prompt("Digite a quantidade a adicionar:"));
-            dinheiro += adicionar;
+            // Adicionar dinheiro
+            let adicionar = parseFloat(prompt("Digite a quantidade a adicionar:"));
+            if (isNaN(adicionar) || adicionar <= 0) {
+                alert("Valor inválido. Tente novamente.");
+            } else {
+                dinheiro += adicionar;
+            }
             break;
         case 2:
-            const remover = parseFloat(prompt("Digite a quantidade a remover:"));
-            if (remover > dinheiro) {
-                console.log("Você não tem dinheiro suficiente.");
+            // Remover dinheiro
+            let remover = parseFloat(prompt("Digite a quantidade a remover:"));
+            if (isNaN(remover) || remover <= 0) {
+                alert("Valor inválido. Tente novamente.");
+            } else if (remover > dinheiro) {
+                alert("Você não tem dinheiro suficiente.");
             } else {
                 dinheiro -= remover;
             }
             break;
         case 3:
-            console.log("Saindo...");
-            process.exit();
-            break;
+            // Sair
+            alert("Saindo...");
+            return;  // Finaliza o loop e sai do programa
         default:
-            console.log("Opção inválida.");
+            alert("Opção inválida. Tente novamente.");
     }
 }
-
